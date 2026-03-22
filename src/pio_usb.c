@@ -106,9 +106,10 @@ void __not_in_flash_func(pio_usb_bus_usb_transfer)(pio_port_t *pp,
       continue;
     }
   } else {
-    while (*pc < PIO_USB_TX_ENCODED_DATA_COMP) {
-      continue;
-    }
+    // disable code as it causes sporadic freezes in host mode
+    //while (*pc < PIO_USB_TX_ENCODED_DATA_COMP) {
+    //  continue;
+    //}
   }
 }
 
